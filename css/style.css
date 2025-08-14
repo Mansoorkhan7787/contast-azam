@@ -877,15 +877,15 @@ select {
     font-size: 1.1rem;
     letter-spacing: 1;
 }
-form {
+/* form {
     position: relative;
 }
 form .button {
     display: flex;
     height: 45px;
     width: 110px;
-}
- /* form {
+} */
+ #contact {
     position: relative;
     display: flex;
     justify-content: center; 
@@ -894,43 +894,70 @@ form .button {
     padding: 10px;
 }
 
-form .button {
+#contact #button {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 45px;
     width: 110px;
-    border-radius: 5px;
+    border-radius:6px;
     margin-top: 3px;
     margin-right: 5px;
 }
 
 
 @media (max-width: 992px) {
-    form {
+    #contact {
+        justify-content: center;
+        width: 350px;
+        padding-top: 6px;
+    }
+    #contact #button {
+        width: 100px;
+        height: 42px;
+        max-width: 150px;
+        margin-top: 4px;
+        margin-right: 10px;
+    }
+}
+@media (max-width: 1200px) {
+    #contact {
         justify-content: center;
         width: 350px;
     }
-    form .button {
-        width: 80px;
+    #contact #button {
+        width: 100px;
         max-width: 150px;
-        margin-top: 6.3px;
-        margin-right: 13px;
+        margin-top: 3px;
+        margin-right: 12px;
+    }
+}
+@media (max-width: 768px) {
+    #contact {
+        justify-content: center;
+        width: 350px;
+    }
+    #contact #button {
+        width: 100px;
+        height: 40px;
+        max-width: 150px;
+        margin-top: 5px;
+        margin-right: 12px;
     }
 }
 @media (max-width: 576px) {
-    form {
+    #contact {
         flex-direction: column; 
         align-items: center;
     }
-    form .button {
-        width: 90%;
+    #contact #button {
+        width:100px;
         height: 40px;
         max-width: 130px;
-        margin-top: 6.3px;
-        margin-right: 13px;
+        margin-top: 4px;
+        margin-right: 15px;
     }
-} */
+}
 
 
 

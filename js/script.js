@@ -2,13 +2,22 @@ const menus = document.querySelector("nav ul");
 const header = document.querySelector("header");
 const menuBtn = document.querySelector(".menu-btn");
 const closeBtn = document.querySelector(".close-btn");
+const menuLinks = document.querySelectorAll("nav ul li a");
 
 menuBtn.addEventListener("click", () => {
     menus.classList.add("display");
 });
+
 closeBtn.addEventListener("click", () => {
     menus.classList.remove("display");
 });
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menus.classList.remove("display");
+    });
+});
+
 
 //  scroll navbar
 window.addEventListener("scroll",() => {
