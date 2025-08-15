@@ -30,9 +30,9 @@ const swiper2 = new Swiper(".swiper2", {
     loopfillGroupwithBlank: true,
 
     autoplay: {
-        delay: 5000,
+        delay: 4000,
     },
-    speed: 400,
+    speed: 300,
     
     breakpoints: {
         320: {
@@ -59,9 +59,9 @@ const swiper3 = new Swiper(".swiper3", {
     loopfillGroupwithBlank: true,
 
     autoplay: {
-        delay: 5000,
+        delay: 4000,
     },
-    speed: 400,
+    speed: 300,
     
     breakpoints: {
         320: {
@@ -87,9 +87,9 @@ const swiper4 = new Swiper(".swiper4", {
     loopfillGroupwithBlank: true,
 
     autoplay: {
-        delay: 5000,
+        delay: 4000,
     },
-    speed: 400,
+    speed: 300,
     
     breakpoints: {
         320: {

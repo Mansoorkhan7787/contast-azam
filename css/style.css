@@ -268,6 +268,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap:5px;
 }
 
 .form-control {
@@ -275,8 +276,8 @@ form {
 }
 
 form .button {
-    width: 40%;
-    height: 50px;
+    width: 50%;
+    height: 48px;  
 }
 
 form input,
@@ -393,7 +394,7 @@ select {
 
 .img-content {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
 }
 
 .img-content h2 {
@@ -611,13 +612,16 @@ select {
     font-size: xx-large;
     font-weight: 700;
 }
-#button {
+
+ #button {
     height: 50px;
     width: 135px;
     display: flex;
-    align-content: center;
-    font-size: larger;
+    align-items: center;  
+    justify-content: center;
+    gap: 8px; 
 }
+
 #button i {
     display: flex;
     margin-top: 5px;
@@ -656,6 +660,9 @@ select {
     background: var(--blue-color);
     padding: 6rem 0;
 }
+#travel-blog .headings {
+    color: var(--white-color);
+}
 .blog h2 {
     color: var(--light-gray-color);
 }
@@ -680,7 +687,7 @@ select {
     bottom: 20px;
 }
 .blog-img-content {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     width: 100%;
     padding: 2rem 1rem;
     transition: all 0.4s ease-in;
@@ -704,7 +711,7 @@ select {
 #Testimonials {
     padding: 6rem 0;
     width: 100%;
-    background: url("../image/blog.png") no-repeat center center/cover;
+    background: url("../image/sea.png") no-repeat center center/cover;
     background-attachment: fixed;
 }
 #Testimonials .headings {
@@ -723,22 +730,7 @@ select {
     text-align: center;
 }
 
- /* .test-img {
-    width: 150px;
-    height: 150px;   
-    border-radius: 50%;
-    overflow: hidden; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 510px;
-}
 
-.test-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-} */
  .test-img {
     width: 150px;
     height: 150px;   
@@ -788,13 +780,27 @@ select {
     color: var(--white-color);
 }
 
-.icon i {
-    height: 80px;
+ .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
     width: 100px;
-    padding: 1rem;
-    font-size: 2.5rem;
-    background: var(--primary-color);
+    border-radius: 50%; 
+    overflow: hidden; 
 }
+
+.icon i {
+    font-size: 2.5rem;
+    color: var(--white-color);
+    background: var(--primary-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .content {
     padding: 1rem;
 }
@@ -806,10 +812,37 @@ select {
     color: var(--white-color);
     margin: 4rem 0;
 }
-.about img {
-    width: 50%;
+
+ .img-logo {
+    width: 20%;
+    margin: 0 auto; 
+    margin-top: -100px;
+}
+
+.img-logo img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
 }
+
+@media (max-width: 992px) {
+    .img-logo {
+        width: 40%; 
+    }
+}
+@media (max-width: 768px) {
+    .img-logo {
+        width: 30%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .img-logo {
+        width: 30%; 
+    }
+}
+
+
 .social-icons {
     display: flex;
     justify-content: space-between;
@@ -833,21 +866,21 @@ select {
     font-size: 0.95rem;
     margin-top: 1rem;
 }
-/* .links ul {
-    list-style-type: none;
+
+ .links {
+    text-align: center;
 }
-.links ul li {
-    margin: 1rem;
-    font-size: 1rem;
-} */
- .links ul {
+
+.links ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: inline-block; 
+    text-align: left; 
 }
 
 .links ul li {
-    margin: 1rem;
+    margin: 0.5rem 0; 
     font-size: 1rem;
 }
 
@@ -877,14 +910,7 @@ select {
     font-size: 1.1rem;
     letter-spacing: 1;
 }
-/* form {
-    position: relative;
-}
-form .button {
-    display: flex;
-    height: 45px;
-    width: 110px;
-} */
+
  #contact {
     position: relative;
     display: flex;
@@ -987,6 +1013,7 @@ form .button {
 }
 .footer {
     border-top: 1px solid var(--light-gray-color);
+
 }
 .footer p {
     text-align: center;
