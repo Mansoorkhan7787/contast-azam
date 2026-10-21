@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tour and Travel website</title>
+    <title>Smart Travel | Curated Tours & Easy Booking</title>
+    <meta name="description" content="Discover curated tours, destination packages and stress-free travel planning with Smart Travel.">
+    <meta name="theme-color" content="#0e7490">
+    <link rel="icon" href="./image/logo.png" type="image/png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="./image/main2.png" fetchpriority="high">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
@@ -12,14 +18,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body>
+<body class="is-loading">
 
     <!--==========Header===========start-->
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="./image/logo.png" alt="" srcset="">
+                    <img loading="lazy" decoding="async" src="./image/logo.png" alt="Travel agency logo" width="500" height="500" decoding="async">
                 </div>
                 <ul>
                     <div class="btn">
@@ -29,7 +35,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#choose-place">Tours</a></li>
                     <li><a href="#top-destination">Destination</a></li>
-                    <li><a href="#travel-blog">Gallery</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#Testimonials">Feedback</a></li>
                     <li><a href="#footer">Contact</a></li>
                 </ul>
@@ -47,7 +53,16 @@
         <div class="slide-container swiper">
             <div class="slide-content swiper-wrapper">
                 <div class="overlay swiper-slide">
-                    <img src="./image/rome.png" alt="">
+                    <img src="./image/main2.png" alt="Travel destination" width="1478" height="700" fetchpriority="high" loading="eager" decoding="async">
+                    <div class="img-overlay">
+                        <p>Let's Travel the world with us</p>
+                        <h2><span>Discover</span>The World</h2>
+                        <h2>With Our Guide</h2>
+                        <a class="hero-btn" href="#choose-place">Explore tours <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="overlay swiper-slide">
+                    <img src="./image/france.png" alt="France travel destination" width="1600" height="1072" loading="lazy" decoding="async">
                     <div class="img-overlay">
                         <p>Let's Travel the world with us</p>
                         <h2><span>Discover</span>The World</h2>
@@ -55,7 +70,7 @@
                     </div>
                 </div>
                 <div class="overlay swiper-slide">
-                    <img src="./image/france.png" alt="">
+                    <img src="./image/rome.png" alt="Rome travel destination" width="2097" height="1430" loading="lazy" decoding="async">
                     <div class="img-overlay">
                         <p>Let's Travel the world with us</p>
                         <h2><span>Discover</span>The World</h2>
@@ -63,15 +78,7 @@
                     </div>
                 </div>
                 <div class="overlay swiper-slide">
-                    <img src="./image/main2.png" alt="">
-                    <div class="img-overlay">
-                        <p>Let's Travel the world with us</p>
-                        <h2><span>Discover</span>The World</h2>
-                        <h2>With Our Guide</h2>
-                    </div>
-                </div>
-                <div class="overlay swiper-slide">
-                    <img src="./image/main1.png" alt="">
+                    <img src="./image/main1.png" alt="Travel destination" width="3000" height="2000" loading="lazy" decoding="async">
                     <div class="img-overlay">
                         <p>Let's Travel the world with us</p>
                         <h2><span>Discover</span>The World</h2>
@@ -88,25 +95,26 @@
     <section id="Location-search">
         <div class="container">
             <div class="form-wrapper">
-                <form action="#">
-                    <input type="text" placeholder="where do?" class="form-control">
-                    <select class="form-control">
-                        <option value="Destination">Destination</option>
-                        <option value="Destination">Greece</option>
-                        <option value="Destination">London</option>
-                        <option value="Destination">Maldives</option>
-                        <option value="Destination">Paris</option>
+                <form id="tour-search">
+                    <input id="tour-query" type="search" placeholder="Where do you want to go?" class="form-control" aria-label="Search destination">
+                    <select id="destination-filter" class="form-control" aria-label="Choose destination">
+                        <option value="">All destinations</option>
+                        <option value="maldives">Maldives</option>
+                        <option value="canada">Canada</option>
+                        <option value="dubai">Dubai</option>
+                        <option value="france">France</option>
+                        <option value="singapore">Singapore</option>
                     </select>
 
-                    <select class="form-control">
-                        <option value="Destination">Duration</option>
-                        <option value="3 Days">3 Day Tour</option>
-                        <option value="3-6 Days ">3-6 Day Tour</option>
-                        <option value="6-10 Days ">6-10 Day Tour</option>
-                        <option value="10+ Days">10+ Day Tour</option>
+                    <select id="duration-filter" class="form-control" aria-label="Choose duration">
+                        <option value="">Any duration</option>
+                        <option value="short">Up to 9 days</option>
+                        <option value="medium">10–13 days</option>
+                        <option value="long">14+ days</option>
                     </select>
-                    <button type="button" class="primary-btn button">Search</button>
+                    <button type="submit" class="primary-btn button">Search</button>
                 </form>
+                <p id="search-message" class="search-message" aria-live="polite"></p>
             </div>
         </div>
     </section>
@@ -155,7 +163,7 @@
                 </div>
                 <div class="agency-right-side">
                     <div class="img">
-                        <img src="./image/about.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/about.png" alt="">
                     </div>
                 </div>
             </div>
@@ -166,11 +174,11 @@
     <section id="choose-place">
         <div class="container">
             <p class="heading-normal-txt">CHOOSE YOUR PLACE</p>
-            <h2 class="headings">POPULER <span>TOURS</span></h2>
+            <h2 class="headings">POPULAR <span>TOURS</span></h2>
             <div class="choose-wraper">
                 <div class="img-left-side">
-                    <div class="lg-img">
-                        <img src="./image/maldives.png" alt="">
+                    <div class="lg-img" data-destination="maldives" data-duration="10" data-price="$4500">
+                        <img loading="lazy" decoding="async" src="./image/maldives.png" alt="Maldives tour">
                         <div class="img-content">
                             <h2>Maldives Tours</h2>
                             <div class="hidden-content">
@@ -185,14 +193,14 @@
                     </div>
                 </div>
                 <div class="img-right-side">
-                    <div class="lg-img">
-                        <img src="./image/canada.png" alt="">
+                    <div class="lg-img" data-destination="canada" data-duration="10" data-price="$4900">
+                        <img loading="lazy" decoding="async" src="./image/canada.png" alt="Canada tour">
                         <div class="img-content">
                             <h2>Canada Tours</h2>
                             <div class="hidden-content">
                                 <span><i class="fa fa-clock"></i>10 Days</span>
                                 <span><i class="fa fa-user"></i>12+</span>
-                                <span><i class="fa fa-location-dot"></i>Italy</span>
+                                <span><i class="fa fa-location-dot"></i>Canada</span>
                             </div>
                         </div>
                         <div class="price-label">
@@ -204,8 +212,8 @@
 
             <!-- row wise image -->
             <div class="row-wise-img">
-                <div class="lg-img">
-                    <img src="./image/dubai.png" alt="">
+                <div class="lg-img" data-destination="dubai" data-duration="12" data-price="$5299">
+                    <img loading="lazy" decoding="async" src="./image/dubai.png" alt="Dubai tour">
                     <div class="img-content">
                         <h2>Dubai Tours</h2>
                         <div class="hidden-content">
@@ -219,8 +227,8 @@
                     </div>
                 </div>
 
-                <div class="lg-img">
-                    <img src="./image/france.png" alt="">
+                <div class="lg-img" data-destination="france" data-duration="14" data-price="$4299">
+                    <img loading="lazy" decoding="async" src="./image/france.png" alt="France tour">
                     <div class="img-content">
                         <h2>France Tours</h2>
                         <div class="hidden-content">
@@ -234,14 +242,14 @@
                     </div>
                 </div>
 
-                <div class="lg-img">
-                    <img src="./image/singapore.png" alt="">
+                <div class="lg-img" data-destination="singapore" data-duration="9" data-price="$3700">
+                    <img loading="lazy" decoding="async" src="./image/singapore.png" alt="Singapore tour">
                     <div class="img-content">
-                        <h2>Singapor Tours</h2>
+                        <h2>Singapore Tours</h2>
                         <div class="hidden-content">
                             <span><i class="fa fa-clock"></i>9 Days</span>
                             <span><i class="fa fa-user"></i>8</span>
-                            <span><i class="fa fa-location-dot"></i>Singapor</span>
+                            <span><i class="fa fa-location-dot"></i>Singapore</span>
                         </div>
                     </div>
                     <div class="price-label">
@@ -288,11 +296,11 @@
     <section id="top-destination">
         <div class="container">
             <p class="heading-normal-txt">TOP DESTINATION</p>
-            <h2 class="headings">POPULER <span>DESTINATION</span></h2>
+            <h2 class="headings">POPULAR <span>DESTINATIONS</span></h2>
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <div class="carousel swiper-slide">
-                        <img src="./image/desmaldive.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desmaldive.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>Maldives</h2>
@@ -309,7 +317,7 @@
                         </div>
                     </div>
                     <div class="carousel swiper-slide">
-                        <img src="./image/desaustralia.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desaustralia.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>Australia</h2>
@@ -326,7 +334,7 @@
                         </div>
                     </div>
                     <div class="carousel swiper-slide">
-                        <img src="./image/desdubai.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desdubai.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>Dubai</h2>
@@ -343,7 +351,7 @@
                         </div>
                     </div>
                     <div class="carousel swiper-slide">
-                        <img src="./image/desfinland.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desfinland.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>Finland</h2>
@@ -360,7 +368,7 @@
                         </div>
                     </div>
                     <div class="carousel swiper-slide">
-                        <img src="./image/desswizerland.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desswizerland.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>Swizerland</h2>
@@ -377,7 +385,7 @@
                         </div>
                     </div>
                     <div class="carousel swiper-slide">
-                        <img src="./image/desuk.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desuk.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>Malaysia</h2>
@@ -394,7 +402,7 @@
                         </div>
                     </div>
                     <div class="carousel swiper-slide">
-                        <img src="./image/desusa.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/desusa.png" alt="">
                         <div class="carousel-img-overlay">
                             <div class="img-content">
                                 <h2><i class="fa fa-location-dot"></i>USA</h2>
@@ -451,7 +459,7 @@
                 <div class="slider-content-wrapper swiper3">
                     <div class="swiper-wrapper">
                         <div class="carousel swiper-slide">
-                            <img src="./image/islam1.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/islam1.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Masjid al-Haram (Makkah)</h2>
@@ -467,7 +475,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/islam2.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/islam2.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Masjid an-Nabawi (Madinah)</h2>
@@ -483,7 +491,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/islam3.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/islam3.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Masjid al-Aqsa (Jerusalem)</h2>
@@ -499,7 +507,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/islam4.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/islam4.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Masjid Quba (Madinah)</h2>
@@ -515,7 +523,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/islam5.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/islam5.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Sultan Ahmed Mosque( Istanbul)</h2>
@@ -531,7 +539,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/islam6.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/islam6.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Imam Husayn Mosque (Karbala)</h2>
@@ -557,7 +565,7 @@
 
     <section id="costa-victoria">
         <div class="video-bg">
-            <video autoplay muted loop preload="auto">
+            <video autoplay muted loop preload="none" poster="./image/sea.png">
                 <source src="./image/sea.mp4" type="video/mp4" />
             </video>
         </div>
@@ -580,7 +588,7 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide blog">
-                        <img src="./image/faci1.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/faci1.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Hotels</h2>
@@ -592,7 +600,7 @@
                          </div> -->
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/faci2.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/faci2.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Transportation</h2>
@@ -605,7 +613,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/faci3.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/faci3.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Meals & Dining</h2>
@@ -617,7 +625,7 @@
                         </div> -->
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/faci4.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/faci4.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Assistant</h2>
@@ -629,7 +637,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/faci5.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/faci5.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Entertainment</h2>
@@ -641,7 +649,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/fa6.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/fa6.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Medicals</h2>
@@ -698,7 +706,7 @@
                 <div class="slider-content-wrapper swiper3">
                     <div class="swiper-wrapper">
                         <div class="carousel swiper-slide">
-                            <img src="./image/rome.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/rome.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Rome</h2>
@@ -714,7 +722,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/vencie.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/vencie.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Vencie</h2>
@@ -730,7 +738,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/perguia.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/perguia.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Perugia</h2>
@@ -746,7 +754,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/parma.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/parma.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Parma</h2>
@@ -762,7 +770,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/abosta.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/abosta.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Abosta</h2>
@@ -778,7 +786,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/sanmark.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/sanmark.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>San Mark</h2>
@@ -802,7 +810,7 @@
                 <div class="slider-content-wrapper swiper3">
                     <div class="swiper-wrapper">
                         <div class="carousel swiper-slide">
-                            <img src="./image/paris.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/paris.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Paris</h2>
@@ -818,7 +826,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/orleanse.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/orleanse.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Orleans</h2>
@@ -834,7 +842,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/lyone.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/lyone.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Lyon</h2>
@@ -850,7 +858,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/nice.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/nice.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Nice</h2>
@@ -866,7 +874,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/cannes.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/cannes.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Cannes</h2>
@@ -882,7 +890,7 @@
                             </div>
                         </div>
                         <div class="carousel swiper-slide">
-                            <img src="./image/nantes.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/nantes.png" alt="">
                             <div class="carousel-img-overlay">
                                 <div class="img-content">
                                     <h2><i class="fa fa-location-dot"></i>Nantes</h2>
@@ -941,7 +949,7 @@
             <div class="top-destination-wrapper swiper2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide blog">
-                        <img src="./image/blogusa.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/blogusa.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Tours</h2>
@@ -953,7 +961,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/blogcanada.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/blogcanada.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Tours</h2>
@@ -965,7 +973,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/bloguk.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/bloguk.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Tours</h2>
@@ -977,7 +985,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/blogitaly.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/blogitaly.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Tours</h2>
@@ -989,7 +997,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/blogparis.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/blogparis.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Tours</h2>
@@ -1001,7 +1009,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide blog">
-                        <img src="./image/blogdubai.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/blogdubai.png" alt="">
                         <div class="blog-img-overlay">
                             <div class="blog-img-content">
                                 <h2>Tours</h2>
@@ -1018,6 +1026,21 @@
     </section>
 
     <!-- ========== Travel Blogs ==========Close-->
+    <section id="gallery">
+        <div class="container">
+            <p class="heading-normal-txt">MOMENTS TO REMEMBER</p>
+            <h2 class="headings">TRAVEL <span>GALLERY</span></h2>
+            <div class="gallery-grid">
+                <button class="gallery-item" type="button"><img loading="lazy" src="./image/maldives.png" alt="Maldives coastline"><span>Maldives</span></button>
+                <button class="gallery-item" type="button"><img loading="lazy" src="./image/dubai.png" alt="Dubai cruise"><span>Dubai</span></button>
+                <button class="gallery-item" type="button"><img loading="lazy" src="./image/france.png" alt="France architecture"><span>France</span></button>
+                <button class="gallery-item" type="button"><img loading="lazy" src="./image/singapore.png" alt="Singapore skyline"><span>Singapore</span></button>
+                <button class="gallery-item" type="button"><img loading="lazy" src="./image/rome.png" alt="Rome city"><span>Rome</span></button>
+                <button class="gallery-item" type="button"><img loading="lazy" src="./image/paris.png" alt="Paris landmark"><span>Paris</span></button>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== Testumotial ==========Start-->
     <section id="Testimonials">
         <div class="container">
@@ -1032,7 +1055,7 @@
                             <i class="fa-solid fa-quote-right"></i>
                         </p>
                         <div class="test-img">
-                            <img src="./image/f1.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/f1.png" alt="">
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-star"></i>
@@ -1051,7 +1074,7 @@
                             <i class="fa-solid fa-quote-right"></i>
                         </p>
                         <div class="test-img">
-                            <img src="./image/f3.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/f3.png" alt="">
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-star"></i>
@@ -1070,7 +1093,7 @@
                             <i class="fa-solid fa-quote-right"></i>
                         </p>
                         <div class="test-img">
-                            <img src="./image/f2.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/f2.png" alt="">
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-star"></i>
@@ -1089,7 +1112,7 @@
                             <i class="fa-solid fa-quote-right"></i>
                         </p>
                         <div class="test-img">
-                            <img src="./image/f4.png" alt="">
+                            <img loading="lazy" decoding="async" src="./image/f4.png" alt="">
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-star"></i>
@@ -1118,7 +1141,7 @@
                     </div>
                     <div class="content">
                         <p class="lead">Call us</p>
-                        <p> +1 123-456-789</p>
+                        <p><a class="footer-contact-link" href="tel:+923473371276">0347-3371276</a></p>
                     </div>
                 </div>
                 <div class="ft-content">
@@ -1127,7 +1150,7 @@
                     </div>
                     <div class="content">
                         <p class="lead">write for us</p>
-                        <p> admin@gmail.com</p>
+                        <p><a class="footer-contact-link" href="mailto:kmr967474@gmail.com">kmr967474@gmail.com</a></p>
                     </div>
                 </div>
                 <div class="ft-content">
@@ -1136,7 +1159,7 @@
                     </div>
                     <div class="content">
                         <p class="lead">Address</p>
-                        <p> Aptech SFC Progressive center Pakistan</p>
+                        <p><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Aptech%20SFC%20Progressive%20Center%20Pakistan" target="_blank" rel="noopener">View our location on Google Maps</a></p>
                     </div>
                 </div>
             </div>
@@ -1147,7 +1170,7 @@
             <div class="footer-wraper">
                 <div class="about">
                     <!-- <div class="img-logo">
-                        <img src="./image/logo.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/logo.png" alt="">
                     </div> -->
                     <p class="lead">
                         Smart Travel is your trusted partner in making journeys around the world easy, exceptional, and unforgettable.
@@ -1168,9 +1191,11 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#choose-place">Tours</a></li>
                         <li><a href="#top-destination">Destination</a></li>
-                        <li><a href="#travel-blog">Gallery</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#Testimonials">Feedback</a></li>
                         <li><a href="#footer">Contact</a></li>
+                        <li><button class="legal-link" type="button" data-legal="privacy">Privacy Policy</button></li>
+                        <li><button class="legal-link" type="button" data-legal="terms">Terms & Conditions</button></li>
                     </ul>
                 </div>
 
@@ -1179,25 +1204,71 @@
                     <p class="lead">
                         signup for our monthly blog letter to stay inform about travel and tours
                     </p>
-                    <form action="#" id="contact">
-                        <input type="email" placeholder="Email Address" />
-                        <button type="button" id="button">Send</button>
+                    <form id="contact">
+                        <input type="email" placeholder="Email Address" aria-label="Email address" required />
+                        <button type="submit" id="button">Send</button>
                     </form>
                     <!-- <div class="img-logo" id="smart">
-                        <img src="./image/logo.png" alt="">
+                        <img loading="lazy" decoding="async" src="./image/logo.png" alt="">
                     </div> -->
                 </div>
             </div>
             <div class="img-logo" id="smart">   
-                    <img src="./image/logo.png" alt="">
+                    <img loading="lazy" decoding="async" src="./image/logo.png" alt="">
                 </div>
             <div class="footer">
-                <p>&copy; 2023 OnlineITtuts. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year"></span> Smart Travel. All Rights Reserved.</p>
             </div>
         </div>
     </section>
 
     <!-- ========== Footer content 2==========start-->
+
+    <a class="whatsapp-float" href="https://wa.me/923473371276?text=Hello%20Smart%20Travel%2C%20I%20would%20like%20to%20book%20a%20tour." target="_blank" rel="noopener" aria-label="Book on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i><span>Book on WhatsApp</span>
+    </a>
+
+    <div class="tour-modal" id="tour-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tour-modal-title">
+        <div class="tour-modal__backdrop" data-modal-close></div>
+        <div class="tour-modal__content">
+            <button class="tour-modal__close" type="button" aria-label="Close tour details" data-modal-close>&times;</button>
+            <img id="tour-modal-image" src="" alt="">
+            <div class="tour-modal__body">
+                <p class="heading-normal-txt">YOUR NEXT ADVENTURE</p>
+                <h2 id="tour-modal-title"></h2>
+                <p id="tour-modal-details"></p>
+                <p class="tour-modal__price" id="tour-modal-price"></p>
+                <button id="tour-modal-book" class="hero-btn" type="button">Book this tour <i class="fa fa-calendar-check"></i></button>
+                <form id="tour-booking-form" class="tour-booking-form" hidden>
+                    <label>Name<input id="booking-name" type="text" required placeholder="Your name"></label>
+                    <label>Phone<input id="booking-phone" type="tel" required placeholder="Your phone number"></label>
+                    <label>Travel date<input id="booking-date" type="date" required></label>
+                    <button class="booking-submit" type="submit">Request booking</button>
+                    <p id="booking-success" aria-live="polite" hidden></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Gallery image">
+        <div class="lightbox__backdrop" data-lightbox-close></div>
+        <div class="lightbox__content">
+            <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close image">&times;</button>
+            <img id="lightbox-image" src="" alt="">
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <div class="legal-modal" id="legal-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+        <div class="legal-modal__backdrop" data-legal-close></div>
+        <article class="legal-modal__content">
+            <button type="button" class="legal-modal__close" data-legal-close aria-label="Close">&times;</button>
+            <h2 id="legal-title"></h2>
+            <div id="legal-content"></div>
+        </article>
+    </div>
+
+    <button class="scroll-top" id="scroll-top" type="button" aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/swiper.js"></script>

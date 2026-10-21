@@ -438,10 +438,15 @@ select {
 /*============= static counter number ===============start*/
 #static-counter {
     padding: 6rem 0;
-    background: url("../image/counter.png") no-repeat center center/cover;
+    background-color: #1b6b7d;
     background-attachment: fixed;
     position: relative;
     z-index: 4;
+}
+
+#static-counter.background-loaded {
+    background: url("../image/counter.png") no-repeat center center/cover;
+    background-attachment: fixed;
 }
 
 #static-counter::after {
